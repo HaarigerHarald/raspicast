@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Raspicast</string>
+    <string name="app_name_cast">Cast (Raspicast)</string>
+    <string name="app_name_cast_queue">Queue (Raspicast)</string>
+    <string name="hostname">Hostname oder IP:</string>
+    <string name="port">Port:</string>
+    <string name="username">Benutzername:</string>
+    <string name="password">Passwort:</string>
+    <string name="savePw">Passwort merken</string>
+    <string name="staticIp">statische IP/Hostname</string>
+    <string name="about_help">Hilfe &amp; Über</string>
+    <string name="ssh_setup">SSH Einstellungen</string>
+    <string name="repeat">Wiederholung</string>
+    <string name="input_dir">Playlist Ordner</string>
+    <string name="play_stream">Stream abspielen</string>
+   	<string name="audio_output">Audioausgang</string>
+    <string name="error_no_stream">Raspicast kann diesen Stream nicht wiedergeben!</string>
+    <string name="error_dir_not_exist">Ordner existiert nicht!</string>
+    <string name="title_choose_input">Playlist Ordner auswählen</string>
+    <string name="error_no_yt_link">Kein gültiger YouTube-link!</string>
+    <string name="error_cant_read_files">Lokale Dateien können nicht gelesen werden!!!</string>
+    <string name="error_cant_read_file">Datei kann nicht gelesen werden!</string>
+    <string name="error_empty_file">Datei ist leer!</string>
+    <string name="error_reading_file">Datei kann nicht gelesen werden!</string>
+    <string name="error_cant_reach">Host ist nicht erreichbar: </string>
+    <string name="error_wrong_login">Authentifikations Fehler, falscher Benutzer oder Passwort!</string>
+    <string name="error_cant_connect">Verbindung nicht möglich!</string>
+    <string name="light_theme">Helles Design</string>
+    <string name="stop">Stop</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Abbrechen</string>
+    <string name="used_libary"><u>Open-Source-Lizenzen</u></string>
+    <string name="bug_report">Bitte wenden Sie sich per <a href="mailto:haarigerharald@gmx.at">E-Mail</a> an mich, wenn Sie Fehler finden oder beim Übersetzen helfen wollen.\n
+        \nReviews und Ratings sind stets willkommen: <a href="https://play.google.com/store/apps/details?id=at.huber.raspicast">Google Play</a></string>
+    <string name="help_headline">Hilfe</string>
+    <string name="help"><u><b>Installation:</b></u>\n
+        \nSie benötigen einen laufenden SSH-Server, dies kann am einfachsten mit dem Tool <i>raspi-config</i> (Raspian) bewerkstelligt werden oder mittels Installation des openssh-server Packets im Packetmanager.\n
+        \nAußerdem sollte der omxplayer installiert sein: <i>\"sudo apt-get install omxplayer\"</i>.
+        \n\nBilder können mittels OMX image viewer angezeigt werden: <a href="http://omxiv.bplaced.net/">Builds</a> (Cast benötigt zusätzlich libcurl)
+        \n\n<u><b>Benutzung:</b></u>
+        \n\n<b>YouTube-videos casten:</b>\nÖffnen Sie in der YouTube-app ein Video, klicken Sie auf \"Teilen\" und wählen Sie anschließend Raspicast.
+        \n\n<b>Queueing:</b>\nUm Dateien hintereinander abzuspielen klicken Sie länger auf eine Datei und wählen Sie dann \"Queue\". Ein Klick spielt die Warteschlange ab dieser Datei ab und ein langer Klick entfernt die Datei aus der Warteschlange.
+        \n\n<b>Streams aus Playlisten abspielen:</b>\nKopieren Sie Ihre Playlist auf die Interne SD-Karte Ihres Geräts und wählens Sie mittels der Option \"Playlist Ordner\" den Ordner in den Sie die Liste kopiert haben.
+        \n\n<u><b>Tipps:</b></u>
+		\n\nMit einem Programm wie \"usbmount\" werden angeschlossene Festplatten und USB-Sticks automatisch gemountet.
+        \n</string>
+        
+	<string name="play">Abspielen</string>
+	<string name="pause">Anhalten</string>
+	<string name="local_files">Dateien</string>
+	<string name="audio_streams">Audiospur</string>
+	<string name="subtitles">Untertitel</string>
+	<string name="subtitles_off">Aus</string>
+
+	<string name="ghost_boxes">Ghost boxes</string>
+	<string name="external_subtitles">Externe Untertitel auswählen</string>
+	<string name="left">links</string>
+	<string name="centered">zentriert</string>
+	<string name="subtitle_alignment">Untertitel Ausrichtung</string>
+	<string name="advanced_options">Erweiterte Optionen</string>
+	<string name="subtitle_size">Untertitelgröße</string>
+	<string name="chkBx_live">Live Option</string>
+	<string name="btn_shutdown">Ausschalten</string>
+	<string name="btn_reboot">Neu starten</string>
+	<string name="options">Optionen</string>
+	<string name="show">Anzeigen</string>
+	<string name="slide_show_start">Starte Slideshow</string>
+	<string name="slide_show_delay">Slideshow Verzögerung:</string>
+	<string name="play_stream_hint">z.B.: http://10.0.0.42:1337</string>
+	<string name="apply_restart">Benötigt App Neustart</string>
+	<string name="record_title">Aufnahme</string>
+	<string name="record_text">Aufnahmedauer:</string>
+	<string name="default_cast">Default Abspieloption</string>
+	<string name="queue">Queue</string>
+	<string name="empty">Leeren</string>
+	<string name="add_to_queue">Queue</string>
+	<string name="dir_to_queue">Queue Ordner</string>
+	<string name="queue_open">Öffne App bei Queue</string>
+	<string name="hide_media_extension">Verstecke Mediendateierweiterungen</string>
+	<string name="key_file">Key-datei:</string>
+	<string name="youtube_quality">YouTube Video Qualität</string>
+	<string name="youtube_http_title">Benutze HTTP</string>
+	<string name="youtube_http_desc">Statt HTTPS</string>
+	<string name="general_settings">Allgemein</string>
+	<string name="for_all_streams">Alle Streams</string>
+	<string name="never">Nie</string>
+	<string name="for_rtp_udp">RTP/UDP Streams</string>
+	<string name="audio_offset">Anfangslautstärke</string>
+	<string name="autostart_queue">Autostart</string>
+	<string name="image_opts">Bilder anzeigen</string>
+	<string name="key_choose_title">SSH Private Key-datei</string>
+	<string name="pub_key">Public Key Authentication</string>
+	<string name="dir_options">Ordneroptionen</string>
+	<string name="dirs_home_screen">Zeige Ordner im Hauptmenü</string>
+	<string name="dirs_home_screen_rem">Entfernen</string>
+	<string name="max_playlist_count">Maximale Playlist-größe</string>
+	<string name="show_queue">Eintrag im Teilen-menü</string>
+	<string name="queue_options">Warteschlangenoptionen</string>
+	<string name="omxplayer_options">omxplayer commandline optionen</string>
+	<string name="omxiv_options">omxiv commandline optionen</string>
+	<string name="cast_notification_text">Streaming mit aktivem Wakelock</string>
+
+	<string name="videos">Videos</string>
+	<string name="music">Musik</string>
+	<string name="albums">Alben</string>
+	<string name="images">Bilder</string>
+	<string name="stream_port">Port fürs Streaming</string>
+	<string name="error_uri">Error, vermutlich falsches URI format</string>
+
+	<string name="alsa_device">Alsa device</string>
+	<string name="no_storage_permission">Keine Speicher Berechtigung! Public-Key-Authentifizierung nicht möglich!</string>
+
+
+</resources>

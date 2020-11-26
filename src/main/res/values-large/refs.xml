@@ -1,0 +1,16 @@
+<resources>
+
+    <!--
+    Layout alias to replace the single-pane version of the layout with a
+    two-pane version on Large screens.
+
+    For more on layout aliases, see:
+    http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
+    -->
+    <item name="activity_raspicast_list" type="layout">@layout/activity_raspicast_twopane</item>
+	
+	<style name="ActionButtonStyle" parent="@android:style/Widget.Holo.ActionButton">
+    	<item name="android:minWidth">60dip</item>              
+	</style>
+    
+</resources>

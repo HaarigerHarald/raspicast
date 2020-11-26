@@ -1,0 +1,81 @@
+buildscript {
+    repositories {
+        // Gradle 4.1 and higher include support for Google's Maven repo using
+        // the google() method. And you need to include this repo to download
+        // Android plugin 3.0.0 or higher.
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.1'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+
+    if (System.console() != null) {
+        signingConfigs {
+            release {
+                storeFile file(System.console().readLine("\nKeystore filepath: "))
+                storePassword System.console().readLine("\nKeystore password: ")
+                keyAlias System.console().readLine("\nKey alias: ")
+                keyPassword System.console().readLine("\nKey password: ")
+            }
+        }
+    }
+
+    defaultConfig {
+        applicationId "at.huber.raspicast"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 63
+        versionName "1.4.10"
+    }
+
+    applicationVariants.all { variant ->
+        if (file("encKey").exists()) {
+            variant.buildConfigField "String", "KEY_FOR_ENCRYPTION", "\"" + file("encKey").text.split("[\n ]")[0] + "\""
+        } else {
+            variant.buildConfigField "String", "KEY_FOR_ENCRYPTION", "\"0000000000000000\""
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles 'proguard.cfg'
+            if (System.console() != null) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven { url "https://jitpack.io" }
+    google()
+}
+
+configurations.all {
+    // Check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+dependencies {
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation('com.github.HaarigerHarald:android-youtubeExtractor:master-SNAPSHOT') {
+        exclude module: 'appcompat-v7'
+        changing = true
+    }
+
+    implementation files('libs/ganymedSSH2.jar')
+    implementation 'org.nanohttpd:nanohttpd:2.3.1'
+    implementation 'com.getbase:floatingactionbutton:1.10.1'
+    implementation 'com.jpardogo.materialtabstrip:library:1.1.1'
+}

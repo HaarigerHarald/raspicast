@@ -1,0 +1,117 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <dimen name="dialog_padding_top">10dp</dimen>
+     
+    <style name="RaspicastTheme.HoloLight" parent="android:Theme.Material.Light.DarkActionBar">
+        <item name="android:windowBackground">@drawable/holo_light_background</item>
+        <item name="android:colorPrimaryDark">#7A231E</item>
+        <item name="android:colorPrimary">?attr/colorPrimary</item>
+        <item name="android:dialogTheme">@style/LightDialogTheme</item>
+        <item name="android:actionOverflowButtonStyle">@style/LightOverFlow</item>
+        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
+        <item name="android:editTextStyle">@style/LightEditText</item>
+        <item name="android:textColor">#F8202020</item>
+    	<item name="android:activatedBackgroundIndicator">@drawable/apptheme_activated_background_holo_light</item>
+ 	    <item name="android:textColorLink">?attr/highlight_color</item>
+        <item name="android:actionBarStyle">@style/LightActionBar</item>
+        <item name="android:actionBarWidgetTheme">@style/LightActionBarWidget</item>
+ 		<item name="menuIconPlay">@drawable/ic_action_play_dark</item>
+        <item name="menuIconStop">@drawable/ic_action_stop_dark</item>
+        <item name="iconPause">@drawable/ic_action_pause_dark</item>
+        <item name="iconForward">@drawable/ic_action_forward_dark</item>
+        <item name="iconBackward">@drawable/ic_action_backward_dark</item>
+        <item name="iconUp">@drawable/ic_action_up_light</item>
+        <item name="iconRepeat">@drawable/ic_action_repeat_dark</item>
+        <item name="vcntrl_background">#00594E</item>
+        <item name="vcntrl_seekbar_style">@style/DarkVcntrlSeekBar</item>
+        <item name="vcntrl_divider">@drawable/video_cntrl_divider_light</item>
+        <item name="icon_empty">@drawable/ic_action_empty_light</item>
+        <item name="queue_divider">?android:attr/dividerVertical</item>
+        <item name="colorPrimary">#A8322A</item>
+        <item name="vcntrl_divider_height">6dp</item>
+        <item name="vcntrl_divider_height_neg">-6dp</item>
+        <item name="queue_background_color">#ffFFFFFF</item>
+        <item name="highlight_color">#00796B</item>
+        <item name="android:colorAccent">#00796B</item>
+        <item name="dir_nav_view_color">#F0F0F0</item>
+        <item name="dir_nav_view_divider">@drawable/current_folder_divider</item>
+        <item name="themeName">light</item>
+    </style>
+    
+    <style name="RaspicastTheme.HoloDark" parent="android:Theme.Material">
+        <item name="android:activatedBackgroundIndicator">@drawable/apptheme_activated_background_holo_dark</item>
+      	<item name="colorPrimary">#150C3F</item>
+        <item name="android:colorPrimary">?attr/colorPrimary</item>
+       	<item name="android:windowBackground">@drawable/material_dark_background</item>
+       	<item name="android:dialogTheme">@style/DarkDialogTheme</item>
+       	<item name="android:colorAccent">#FB8C00</item>
+       	<item name="android:colorPrimaryDark">#0F0930</item>
+        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
+        <item name="android:actionBarStyle">@style/DarkActionBar</item>
+        <item name="android:actionOverflowButtonStyle">@style/LightOverFlow</item>
+        <item name="menuIconPlay">@drawable/ic_action_play_dark</item>
+        <item name="menuIconStop">@drawable/ic_action_stop_dark</item>
+        <item name="iconPause">@drawable/ic_action_pause_dark</item>
+        <item name="iconForward">@drawable/ic_action_forward_dark</item>
+        <item name="iconBackward">@drawable/ic_action_backward_dark</item>
+        <item name="iconUp">@drawable/ic_action_up_dark</item>
+        <item name="iconRepeat">@drawable/ic_action_repeat_dark</item>
+        <item name="vcntrl_background">#150C3F</item>
+		<item name="vcntrl_seekbar_style">@style/DarkVcntrlSeekBar</item>
+        <item name="vcntrl_divider">@drawable/video_cntrl_divider_dark</item>
+        <item name="icon_empty">@drawable/ic_action_empty_dark</item>
+        <item name="vcntrl_divider_height">2dp</item>
+        <item name="vcntrl_divider_height_neg">-2dp</item>
+        <item name="queue_background_color">#212121</item>
+        <item name="queue_divider">?android:attr/dividerVertical</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="highlight_color">#FB8C00</item>
+        <item name="android:textColorHighlight">#66FB8C00</item>
+        <item name="dir_nav_view_color">#3A888888</item>
+        <item name="dir_nav_view_divider">@drawable/current_folder_divider_dial</item>
+        <item name="themeName">dark</item>
+    </style>
+    
+    <style name="LightActionBar"
+           parent="@android:style/Widget.Material.Light.ActionBar.Solid">
+        <item name="android:icon">@drawable/actionbar_space_between_icon_and_title_lol</item>
+    </style>
+    
+    <style name="DarkActionBar"
+           parent="@android:style/Widget.Material.ActionBar.Solid">
+        <item name="android:icon">@drawable/actionbar_space_between_icon_and_title_lol</item>
+    </style>
+    
+ 	<style name="LightActionBarWidget" parent="android:Theme.Material.Light">	    
+    	<!--<item name="android:popupMenuStyle">@android:style/Widget.Material.Light.PopupMenu</item>-->
+    	<item name="android:popupMenuStyle">@style/LightPopupMenu</item>
+    	<item name="android:listChoiceIndicatorMultiple">@drawable/apptheme_btn_check_holo_light</item>
+    	<item name="android:dropDownListViewStyle">@android:style/Widget.Material.Light.ListView.DropDown</item>
+	</style>
+ 	
+ 	<style name="DarkDialogTheme" parent="android:Theme.Material.Dialog">
+ 	    <item name="android:textColorHighlight">#66FB8C00</item>
+ 	    <item name="android:textColorLink">?attr/highlight_color</item>
+    	<item name="android:colorAccent">?attr/highlight_color</item>
+	</style>
+ 	
+ 	<style name="LightDialogTheme" parent="android:Theme.Material.Light.Dialog">
+ 	    <item name="android:textColorLink">#00796B</item>
+    	<item name="android:colorAccent">#00796B</item>
+	</style>
+	
+ 	<style name="LightSeekBar" parent="android:Widget.Material.Light.SeekBar">
+ 	  <item name="android:splitTrack">false</item>    
+      <item name="android:progressDrawable">@drawable/scrubber_progress_horizontal_light</item>
+      <item name="android:indeterminateDrawable">@drawable/scrubber_progress_horizontal_light</item>
+      <item name="android:thumb">@drawable/scrubber_control_selector_light</item>
+  </style>
+	
+ 	<style name="DarkVcntrlSeekBar" parent="android:Widget.Material.SeekBar">
+ 	    <item name="android:splitTrack">false</item>    
+ 	   <item name="android:progressDrawable">@drawable/scrubber_progress_horizontal_dark</item>
+      <item name="android:thumb">@drawable/scrubber_control_selector_dark</item>
+  </style>
+	
+
+</resources>

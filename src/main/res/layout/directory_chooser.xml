@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical" 
+    android:paddingTop="@dimen/dialog_padding_top">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+        
+	<TextView
+	    android:id="@+id/txt_navigation_bar"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="?android:attr/selectableItemBackground"
+	    android:drawableLeft="?attr/iconUp"
+	    android:drawablePadding="7.3dp"
+        android:paddingBottom="8.5dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8.5dp"
+	    android:ellipsize="start"
+	    android:gravity="center_vertical"
+	    android:textAppearance="?android:attr/textAppearanceMedium"
+	    android:textSize="15sp"
+	    android:singleLine="true" />
+	
+	<View
+    	android:id="@+id/divider"
+  		android:layout_width="match_parent"
+  		android:layout_height="2dp"
+  		android:background="@drawable/current_folder_divider_dial" />
+	
+	<ListView
+	    android:id="@+id/lv_directory_choose"
+	    style="?android:attr/textAppearanceLarge"
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1" />
+	
+	</LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginBottom="0dp"
+        android:background="?android:attr/dividerVertical" />
+
+    <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:measureWithLargestChild="true"
+            android:orientation="horizontal"
+            android:paddingTop="0dip" >
+
+            <Button
+                android:id="@+id/btnCancel"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_cancel" />
+
+            <Button
+                android:id="@+id/btnOk"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_ok" />
+    </LinearLayout>
+
+</LinearLayout>

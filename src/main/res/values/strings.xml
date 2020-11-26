@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Raspicast</string>
+    <string name="app_name_cast">Cast (Raspicast)</string>
+    <string name="app_name_cast_queue">Queue (Raspicast)</string>
+    <string name="hostname">Hostname or ip:</string>
+    <string name="port">Port:</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="savePw">Save password</string>
+    <string name="staticIp">Static ip/hostname</string>
+    <string name="about_help">Help &amp; About</string>
+    <string name="ssh_setup">SSH settings</string>
+   	<string name="repeat">Repeat</string>
+    <string name="input_dir">Playlist directory</string>
+    <string name="play_stream">Play stream</string>
+   	<string name="audio_output">Audio output</string>
+    <string name="error_no_stream">Raspicast can\'t play this sort of stream!</string>
+    <string name="error_dir_not_exist">Directory does not exist!</string>
+    <string name="title_choose_input">Choose playlist directory</string>
+    <string name="error_no_yt_link">Not a valid YouTube link!</string>
+    <string name="error_cant_read_files">Can\'t read local files!!!</string>
+    <string name="error_cant_read_file">Can\'t read file!</string>
+    <string name="error_empty_file">File is empty!</string>
+    <string name="error_reading_file">An error occurred while reading the list.</string>
+    <string name="error_cant_reach">Unable to reach</string>
+    <string name="error_wrong_login">Authentication error! Wrong username or password!</string>
+    <string name="error_cant_connect">Unable to connect!</string>
+    <string name="light_theme">Light theme</string>
+    <string name="stop">Stop</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="used_libary"><u>Open source licenses</u></string>
+    <string name="bug_report">If you find any bugs or want to help translating, please contact me: <a href="mailto:haarigerharald@gmx.at">Email</a>\n
+        \nReviews and ratings are always welcome: <a href="https://play.google.com/store/apps/details?id=at.huber.raspicast">Google Play</a></string>
+    <string name="help_headline">Help</string>
+    <string name="help"><u><b>Install:</b></u>\n
+        \nYou will need a running ssh server on your Pi, you can pretty conviniently do that via <i>\"sudo raspi-config\"</i> on raspian or just install the openssh-server package with your package manager.\n
+        \nSecondly you need to have the omxplayer installed: <i>\"sudo apt-get install omxplayer\"</i>.
+        \n\nImages can be displayed via the OMX image viewer: <a href="http://omxiv.bplaced.net/">Builds</a> (Cast needs libcurl installed)
+        \n\n<u><b>Usage:</b></u>
+        \n\n<b>Casting YouTube videos:</b>\nOpen the YouTube app and a video you want to watch, click \"Share\" and choose Raspicast.
+       	\n\n<b>Queueing:</b>\nTo queue files long press them and choose \"Queue\". A click starts the queue from that item and a long click removes that item from the queue.
+        \n\n<b>Playing streams from playlists:</b>\nCopy your playlist (m3u, pls) to your sdcard and select the folder in the option window.
+        \n\n<u><b>Usage tips:</b></u>
+		\n\nUse an automount program like \"usbmount\" to easily access files on a hard drive or usb stick.\n</string>
+	
+	<string name="play">Play</string>
+	<string name="pause">Pause</string>
+	<string name="local_files">Files</string>
+	<string name="audio_streams">Audio tracks</string>
+	<string name="subtitles">Subtitles</string>
+	<string name="subtitles_off">Off</string>
+	    
+	<string name="ghost_boxes">Ghost boxes</string>
+	<string name="external_subtitles">Choose external subtitles</string>
+	<string name="left">Left</string>
+	<string name="centered">Centered</string>
+	<string name="subtitle_alignment">Subtitle alignment</string>
+	<string name="advanced_options">Advanced options</string>
+	<string name="subtitle_size">Subtitle size</string>
+	<string name="chkBx_live">Live option</string>
+	<string name="btn_shutdown">Shutdown</string>
+	<string name="btn_reboot">Reboot</string>
+	<string name="options">Options</string>
+	<string name="show">Show</string>
+	<string name="slide_show_start">Start slideshow</string>
+	<string name="slide_show_delay">Slideshow delay:</string>
+	<string name="play_stream_hint">e.g.: http://10.0.0.42:1337</string>
+	<string name="apply_restart">applied on app restart</string>
+	<string name="record_title">Record</string>
+	<string name="record_text">Record duration:</string>
+	<string name="default_cast">Default play option</string>
+	<string name="queue">Queue</string>
+	<string name="empty">Empty</string>
+	<string name="add_to_queue">Queue</string>
+	<string name="dir_to_queue">Queue directory</string>
+	<string name="queue_open">Open app on queue</string>
+	<string name="hide_media_extension">Hide media file extensions</string>
+	<string name="key_file">Key file:</string>
+	<string name="youtube_quality">YouTube video quality</string>
+	<string name="youtube_http_title">Use HTTP</string>
+	<string name="youtube_http_desc">Instead of HTTPS, may be blocked in some regions</string>
+	<string name="general_settings">General</string>
+	<string name="for_all_streams">All streams</string>
+	<string name="never">Never</string>
+	<string name="for_rtp_udp">RTP/UDP streams</string>
+	<string name="audio_offset">Audio volume offset</string>
+	<string name="autostart_queue">Autostart</string>
+	<string name="image_opts">Image displaying</string>
+	<string name="key_choose_title">SSH private key file</string>
+	<string name="pub_key">Public key authentication</string>
+	<string name="dir_options">Directory options</string>
+	<string name="dirs_home_screen">Add directory to main menu</string>
+	<string name="dirs_home_screen_rem">Remove</string>
+	<string name="max_playlist_count">Max playlist size</string>
+	<string name="show_queue">List in share menu</string>
+	<string name="queue_options">Queue options</string>
+	<string name="omxplayer_options">omxplayer commandline options</string>
+	<string name="omxiv_options">omxiv commandline options</string>
+	<string name="cast_notification_text">Streaming with wakelock</string>
+
+	<string name="videos">Videos</string>
+	<string name="music">Music</string>
+	<string name="albums">Albums</string>
+	<string name="images">Images</string>
+	<string name="stream_port">Local streaming port</string>
+	<string name="error_uri">Error, probably wrong URI format</string>
+
+	<string name="alsa_device">Alsa device</string>
+	<string name="no_storage_permission">No storage permission! Public key authentication not possible!</string>
+
+
+</resources>

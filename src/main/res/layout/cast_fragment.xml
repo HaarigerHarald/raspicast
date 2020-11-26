@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:background="?attr/colorPrimary"
+        android:textColorPrimary="@android:color/white"
+        app:pstsShouldExpand="true" />
+    
+	<android.support.v4.view.ViewPager
+		xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:id="@+id/pager"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:layout_below="@+id/tabs" />
+
+    <View
+	    android:layout_width="match_parent"
+	    android:layout_height="3dp"
+	    android:layout_alignTop="@+id/pager"
+	    android:layout_centerHorizontal="true"
+	    android:background="@drawable/drop_shadow" />
+    
+	<com.getbase.floatingactionbutton.FloatingActionButton
+	        android:id="@+id/fab"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        fab:fab_icon="@drawable/ic_queue_white_36dp"
+	        fab:fab_colorNormal="?attr/highlight_color"
+	        android:layout_alignParentTop="true"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="50dp"
+	        android:visibility="gone"/>
+
+</RelativeLayout>
+

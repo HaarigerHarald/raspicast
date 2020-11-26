@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RaspicastTheme">
+        <attr name="menuIconPlay" format="reference" />
+        <attr name="colorPrimary" format="color" />
+        <attr name="menuIconStop" format="reference" />
+        <attr name="iconPause" format="reference" />
+        <attr name="iconForward" format="reference" />
+        <attr name="iconBackward" format="reference" />
+        <attr name="iconUp" format="reference" />
+        <attr name="iconRepeat" format="reference" />
+        <attr name="vcntrl_background" format="color" />
+        <attr name="vcntrl_seekbar_style" format="reference" />
+        <attr name="queue_divider" format="reference" />
+        <attr name="icon_empty" format="reference" />
+        <attr name="vcntrl_divider" format="reference" />
+        <attr name="vcntrl_divider_height" format="dimension" />
+        <attr name="vcntrl_divider_height_neg" format="dimension" />
+        <attr name="highlight_color" format="color" />
+        <attr name="queue_background_color" format="color" />
+        <attr name="dir_nav_view_color" format="color" />
+        <attr name="dir_nav_view_divider" format="color|reference" />
+        <attr name="themeName" format="string" />
+    </declare-styleable>
+
+</resources>

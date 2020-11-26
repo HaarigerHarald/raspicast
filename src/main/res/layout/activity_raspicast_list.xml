@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	    
+	
+	<RelativeLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="0dip"
+	    android:layout_gravity="top"
+	    android:layout_weight="1">
+	    
+	    <fragment 
+	        android:id="@+id/raspicast_list"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_marginLeft="11dp"
+	    	android:layout_marginRight="11dp"
+			android:name="at.huber.raspicast.RaspiListFragment" 
+	    	tools:context="at.huber.raspicast.RaspiListActivity"
+	    	tools:layout="@android:layout/list_content" /> 
+    
+    	<View android:layout_width="match_parent"
+	    	android:layout_height="3dp"
+	    	android:layout_centerHorizontal="true"
+	    	android:background="@drawable/drop_shadow" />
+    	
+    	<com.getbase.floatingactionbutton.FloatingActionButton
+	        android:id="@+id/fab"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        fab:fab_icon="@drawable/ic_queue_white_36dp"
+	        fab:fab_colorNormal="?attr/highlight_color"
+	        android:visibility="gone"
+	        android:layout_alignParentTop="true"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginTop="5dp"/>
+    
+    </RelativeLayout>
+
+</LinearLayout>

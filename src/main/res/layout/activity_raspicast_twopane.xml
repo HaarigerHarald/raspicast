@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+   	android:id="@+id/mainLayout"
+   	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+   	
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dip"
+    android:layout_weight="1"
+    android:baselineAligned="false"
+    android:divider="?android:attr/dividerHorizontal"
+    android:orientation="horizontal"
+    android:showDividers="middle"
+    tools:context="at.huber.raspicast.RaspiListActivity" >
+	
+    <RelativeLayout 
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.4">
+        
+	    <fragment 
+	        android:id="@+id/raspicast_list"
+	        android:name="at.huber.raspicast.RaspiListFragment"
+	        android:layout_width="match_parent"
+	   		android:layout_height="match_parent"
+	        tools:layout="@android:layout/list_content" />
+    
+    <View
+	    android:layout_width="match_parent"
+	    android:layout_height="3dp"
+	    android:layout_centerHorizontal="true"
+	    android:background="@drawable/drop_shadow" />
+    
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/raspicast_detail_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3.1" />
+
+</LinearLayout>
+</LinearLayout>

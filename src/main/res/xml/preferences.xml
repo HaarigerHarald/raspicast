@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <Preference
+        android:key="customCMD"
+        android:title="Custom command"/>
+    
+    <Preference
+        android:key="customCMD2"
+        android:title="Custom command 2" />
+
+    <PreferenceCategory android:title="YouTube" >
+        <Preference
+            android:key="youtubeQuality"
+            android:persistent="false"
+            android:title="@string/youtube_quality" />
+
+        <CheckBoxPreference
+            android:key="youtubeHTTP"
+            android:persistent="true"
+            android:summary="@string/youtube_http_desc"
+            android:title="@string/youtube_http_title" />
+        
+         <EditTextPreference
+            android:persistent="false"
+            android:inputType="number"
+            android:hint="maximum: 100"
+            android:max="100"
+            android:key="maxPlaylistSize"
+            android:title="@string/max_playlist_count" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/general_settings"
+        android:key="general">
+        <Preference
+            android:key="InputDir"
+            android:title="@string/input_dir" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="lightTheme"
+            android:persistent="true"
+            android:summary="@string/apply_restart"
+            android:title="@string/light_theme" />
+
+        <Preference
+            android:key="liveOptions"
+            android:persistent="false"
+            android:title="@string/chkBx_live" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="showA1Tv"
+            android:persistent="true"
+            android:title="A1 TV" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="hideExtensions"
+            android:persistent="true"
+            android:title="@string/hide_media_extension" />
+        
+       <EditTextPreference
+            android:key="audioOffset"
+            android:inputType="number|numberSigned"
+            android:persistent="false"
+            android:title="@string/audio_offset" />
+
+        <EditTextPreference
+            android:key="alsaDevice"
+            android:persistent="true"
+            android:defaultValue=""
+            android:title="@string/alsa_device" />
+       
+       <EditTextPreference
+            android:key="omxplayerOptions"
+            android:persistent="true"
+            android:defaultValue=""
+            android:title="@string/omxplayer_options"
+            android:hint="e.g.: --no-osd" />
+       
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/queue_options">
+        
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="showQueueShare"
+            android:persistent="true"
+            android:title="@string/show_queue" />
+        
+       <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="openOnQueue"
+            android:persistent="true"
+            android:title="@string/queue_open" />
+       
+       <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="autostartQueue"
+            android:persistent="true"
+            android:title="@string/autostart_queue" />
+       
+       <Preference
+            android:key="defaultPlayOption"
+            android:persistent="false"
+            android:title="@string/default_cast" />
+       
+       <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="openQueueWithSwipe"
+            android:persistent="true"
+            android:title="Open queue with swipe" />
+       
+       <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="miniQueueButton"
+            android:persistent="true"
+            android:title="Mini queue button" />
+        
+    </PreferenceCategory> 
+    
+    <PreferenceCategory android:title="@string/subtitles" >
+        <CheckBoxPreference
+            persistent="true"
+            android:defaultValue="true"
+            android:key="subtitleBoxes"
+            android:title="@string/ghost_boxes" />
+
+        <Preference
+            android:key="subtitlesLeft"
+            android:persistent="false"
+            android:title="@string/subtitle_alignment" />
+
+        <EditTextPreference
+            android:persistent="false"
+            android:inputType="number"
+            android:hint="default: 55"
+            android:key="subtitleSize"
+            android:title="@string/subtitle_size" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/image_opts" >
+    	<SeekBarPreference
+            android:defaultValue="2"
+            android:key="slideshowDelay"
+            android:max="9"
+            android:persistent="true"
+            android:title="@string/slide_show_delay" />
+    	
+    	<EditTextPreference
+            android:key="omxivOptions"
+            android:persistent="true"
+            android:defaultValue=""
+            android:title="@string/omxiv_options"
+            android:hint="e.g.: -T blend" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="Experimental" >
+        <EditTextPreference
+            android:persistent="false"
+            android:inputType="number"
+            android:hint="default: 8080"
+            android:key="streamPort"
+            android:title="@string/stream_port" />
+
+    	<EditTextPreference
+            android:key="tempDir"
+            android:persistent="true"
+            android:defaultValue="/tmp"
+            android:title="Temp file directory"
+            android:hint="default: /tmp" />
+    </PreferenceCategory>
+    
+
+</PreferenceScreen>

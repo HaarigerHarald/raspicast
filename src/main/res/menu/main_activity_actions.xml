@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item
+        android:id="@+id/action_repeat_icon"
+        android:icon="?attr/iconRepeat"
+        android:showAsAction="always"
+        android:visible="false"
+        android:title="@string/repeat"/>
+
+    <item
+        android:id="@+id/action_backward"
+        android:icon="?attr/iconBackward"
+        android:showAsAction="always"
+        android:visible="false"
+        android:title="-10s"/>
+    
+    <item
+        android:id="@+id/action_start"
+        android:icon="?attr/menuIconPlay"
+        android:showAsAction="always"
+        android:title="@string/play_stream"/>
+    
+   	<item
+        android:id="@+id/action_forward"
+        android:icon="?attr/iconForward"
+        android:showAsAction="always"
+        android:visible="false"
+        android:title="+10s"/>
+    
+    <item
+        android:id="@+id/action_stop"
+        android:icon="?attr/menuIconStop"
+        android:showAsAction="always"
+        android:title="@string/stop"/>
+    
+        
+    <item
+        android:id="@+id/action_ssh_settings"
+        android:showAsAction="never"
+        android:title="@string/ssh_setup"/>
+    
+    <item android:id="@+id/action_repeat" 
+         android:title="@string/repeat"
+         android:showAsAction="never"
+         android:checkable="true" />
+        
+    <item android:id="@+id/action_audio_output" 
+         android:title="@string/audio_output"
+         android:showAsAction="never"/>
+    
+    <item android:id="@+id/action_audio_streams" 
+         android:title="@string/audio_streams"
+         android:showAsAction="never"
+         android:visible="false"/>
+    
+     <item android:id="@+id/action_subtitles" 
+         android:title="@string/subtitles"
+         android:showAsAction="never"
+         android:visible="false"/>
+     
+     <item android:id="@+id/action_advanced_options" 
+         android:title="@string/advanced_options"
+         android:showAsAction="never"/>
+    
+    <item
+        android:id="@+id/action_about_help"
+        android:showAsAction="never"
+        android:title="@string/about_help"/>
+
+</menu>

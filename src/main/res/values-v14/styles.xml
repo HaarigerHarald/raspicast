@@ -1,0 +1,46 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="RaspicastTheme.HoloLight" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:windowBackground">@drawable/holo_light_background</item>
+        <item name="android:dialogTheme">@style/LightDialogTheme</item>
+        <item name="colorPrimary">#A8322A</item>
+        <item name="android:alertDialogStyle">@style/LightDialogTheme</item>
+        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
+        <item name="android:actionOverflowButtonStyle">@style/LightOverFlow</item>
+        <item name="android:editTextStyle">@style/LightEditText</item>
+        <item name="android:textColorHighlight">#99A8322A</item>
+    	<item name="android:activatedBackgroundIndicator">@drawable/apptheme_activated_background_holo_light</item>
+ 	    <item name="android:textColorLink">#B7463C</item>
+ 	    <item name="android:seekBarStyle">@style/LightSeekBar</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/apptheme_btn_check_holo_light</item>
+    	<item name="android:listChoiceIndicatorSingle">@drawable/apptheme_btn_radio_holo_light</item>
+        <item name="android:actionBarStyle">@style/LightActionBar</item>
+ 		<item name="menuIconPlay">@drawable/ic_action_play_dark</item>
+        <item name="menuIconStop">@drawable/ic_action_stop_dark</item>
+        <item name="iconPause">@drawable/ic_action_pause_dark</item>
+        <item name="iconForward">@drawable/ic_action_forward_dark</item>
+        <item name="iconBackward">@drawable/ic_action_backward_dark</item>
+        <item name="iconUp">@drawable/ic_action_up_light</item>
+        <item name="iconRepeat">@drawable/ic_action_repeat_dark</item>
+        <item name="vcntrl_background">#00594E</item>
+        <item name="vcntrl_seekbar_style">@style/DarkVcntrlSeekBar</item>
+        <item name="vcntrl_divider">@drawable/video_cntrl_divider_light</item>
+        <item name="queue_divider">?android:attr/dividerVertical</item>
+        <item name="icon_empty">@drawable/ic_action_empty_light</item>
+        <item name="vcntrl_divider_height">6dp</item>
+        <item name="dir_nav_view_color">#F0F0F0</item>
+        <item name="dir_nav_view_divider">@drawable/current_folder_divider</item>
+        <item name="queue_background_color">#ffFFFFFF</item>
+        <item name="vcntrl_divider_height_neg">-6dp</item>
+        <item name="highlight_color">#00796B</item>
+        <item name="themeName">light</item>
+        <item name="android:actionBarWidgetTheme">@style/LightActionBarWidget</item>
+    </style>
+
+    <style name="LightActionBarWidget" parent="android:Theme.Holo.Light">
+        <item name="android:popupMenuStyle">@style/LightPopupMenu</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/apptheme_btn_check_holo_light</item>
+        <item name="android:dropDownListViewStyle">@android:style/Widget.Holo.Light.ListView.DropDown</item>
+    </style>
+
+</resources>

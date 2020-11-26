@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" 
+    android:paddingTop="@dimen/dialog_padding_top">
+
+    <RadioButton
+        android:id="@+id/rd_hdmi"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:button="@null"
+        android:checked="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawableRight="?android:attr/listChoiceIndicatorSingle"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="hdmi"
+        android:textSize="18sp" />
+    
+        <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginBottom="0dp"
+        android:background="?android:attr/dividerVertical" />
+
+    <RadioButton
+        android:id="@+id/rd_local"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:button="@null"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawableRight="?android:attr/listChoiceIndicatorSingle"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="local"
+        android:textSize="18sp" />
+    
+        <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginBottom="0dp"
+        android:background="?android:attr/dividerVertical" />
+
+    <RadioButton
+        android:id="@+id/rd_both"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:button="@null"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawableRight="?android:attr/listChoiceIndicatorSingle"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="both"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginBottom="0dp"
+        android:background="?android:attr/dividerVertical" />
+
+    <RadioButton
+        android:id="@+id/rd_alsa"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:button="@null"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawableRight="?android:attr/listChoiceIndicatorSingle"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="alsa"
+        android:textSize="18sp" />
+
+</RadioGroup>

@@ -1,0 +1,19 @@
+<resources>
+
+    <!--
+    Layout alias to replace the single-pane version of the layout with a
+    two-pane version on Large screens.
+
+    For more on layout aliases, see:
+    http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
+    -->
+    <dimen name="queue_item_text_size">17sp</dimen>
+    <dimen name="queue_size">300dp</dimen>
+    <item name="activity_raspicast_list" type="layout">@layout/activity_raspicast_twopane</item>
+    <dimen name="main_margin">16dp</dimen>
+	
+	<style name="ActionButtonStyle" parent="@android:style/Widget.Holo.ActionButton">
+    	<item name="android:minWidth">63dp</item>
+	</style>
+    
+</resources>
