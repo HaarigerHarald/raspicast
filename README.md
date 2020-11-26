@@ -2,6 +2,7 @@ Raspicast
 ====================================================================
 
 These are the sources of the android app Raspicast:
+
 https://play.google.com/store/apps/details?id=at.huber.raspicast
 
 
@@ -25,5 +26,7 @@ License
 ====================================================================
 
 The sources are licensed under the GPLv2 see:
-https://www.gnu.org/licenses/old-licenses/gpl-2.0.html or
-the supplied LICENSE.
+
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+or the supplied LICENSE.
