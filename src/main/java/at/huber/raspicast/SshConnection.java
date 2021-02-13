@@ -62,8 +62,8 @@ public class SshConnection {
 	private final static String CMD_SEARCH_RELATIVE_PRE="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Seek int64:";
 	private final static String CMD_SEARCH_POST="000000 >/dev/null 2>&1";
 
-	private static String CMD_LOUDER="echo -n +>>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null";
-	private static String CMD_QUIETER="echo -n ->>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null";
+	private static String CMD_LOUDER="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Action int32:18";
+	private static String CMD_QUIETER="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Action int32:17";
 
 	private static String CMD_REPEAT="rm " + TEMP_FILES_LOCATION + "/.r_loop 2>/dev/null";
 	private static String CMD_DO_NOT_REPEAT="echo> " + TEMP_FILES_LOCATION + "/.r_loop 2>/dev/null";
@@ -125,8 +125,8 @@ public class SshConnection {
 	public static void updateTmpFileLoc(){
 		ABORT_COMMAND="pkill omxplayer.bin;pkill -x omxplayer;rm " + TEMP_FILES_LOCATION + "/.r_info;rm " + TEMP_FILES_LOCATION + "/.linenum;";
 
-		CMD_LOUDER="echo -n +>>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null";
-		CMD_QUIETER="echo -n ->>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null";
+		//CMD_LOUDER="echo -n +>>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null";
+		//CMD_QUIETER="echo -n ->>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null";
 
 		CMD_REPEAT="rm " + TEMP_FILES_LOCATION + "/.r_loop 2>/dev/null";
 		CMD_DO_NOT_REPEAT="echo> " + TEMP_FILES_LOCATION + "/.r_loop 2>/dev/null";
@@ -1152,11 +1152,11 @@ public class SshConnection {
 
 	public static void changeVolume(final Context con, final boolean louder) {
 		if(lastVolumeControlMillis+100<=System.currentTimeMillis()){
-//			String command= "v=$(($(grep -o + " + TEMP_FILES_LOCATION
-//			+ "/.r_input|wc -l)-$(grep -o - " + TEMP_FILES_LOCATION + "/.r_input|wc -l)));test $v -gt 7&&exit;test $v -lt -17&&exit;";
+			//String command= "v=$(($(grep -o + " + TEMP_FILES_LOCATION
+			//+ "/.r_input|wc -l)-$(grep -o - " + TEMP_FILES_LOCATION + "/.r_input|wc -l)));test $v -gt 7&&exit;test $v -lt -17&&exit;";
 			String command=(louder) ? CMD_LOUDER : CMD_QUIETER;
 			lastVolumeControlMillis=System.currentTimeMillis();
-			executeCommand(con, command, false);
+			executeCommand(con, getDbus()+command, false);
 		}
 	}
 	
