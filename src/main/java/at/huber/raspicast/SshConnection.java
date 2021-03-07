@@ -951,7 +951,7 @@ public class SshConnection {
 				" >$l;while true;do while [ $(cat $l) -le $(wc -l<$f) ];do sed -n \"$(cat $l),+1p\" $f>"
 				+TEMP_FILES_LOCATION+"/.r_info;omxplayer"+addOptions+subtitleString+" -o "+audioOuputDevice+getLastVolumeString()
 				+ "$(sed -n \"$(($(cat $l)+2))p\" $f) \"$(sed -n \"$(($(cat $l)+3))p\" $f)\">/dev/null 2>&1 <"+ TEMP_FILES_LOCATION 
-				+ "/.r_input;test $? -gt 134&&exit;echo $(($(cat $l)+4)) >$l;done;echo 1 >$l;test -e " + TEMP_FILES_LOCATION+ 
+				+ "/.r_input;test $? -ne 0&&exit;echo $(($(cat $l)+4)) >$l;done;echo 1 >$l;test -e " + TEMP_FILES_LOCATION+ 
 				"/.r_loop&&break;done;rm "+ TEMP_FILES_LOCATION + "/.r_info;rm "+ TEMP_FILES_LOCATION + "/.linenum)");
 		}
 		executeCommand(context, stb.toString(), true);
@@ -995,7 +995,7 @@ public class SshConnection {
 				" >$l;while true;do while [ $(cat $l) -le $(wc -l<$f) ];do sed -n \"$(cat $l),+1p\" $f>"
 				+TEMP_FILES_LOCATION+"/.r_info;omxplayer"+addOptions+subtitleString+" -o "+audioOuputDevice+getLastVolumeString()
 				+ "$(sed -n \"$(($(cat $l)+2))p\" $f) \"$(sed -n \"$(($(cat $l)+3))p\" $f)\">/dev/null 2>&1 <"+ TEMP_FILES_LOCATION 
-				+ "/.r_input;test $? -gt 134&&exit;echo $(($(cat $l)+4)) >$l;done;echo 1 >$l;test -e " + TEMP_FILES_LOCATION+ 
+				+ "/.r_input;test $? -ne 0&&exit;echo $(($(cat $l)+4)) >$l;done;echo 1 >$l;test -e " + TEMP_FILES_LOCATION+ 
 				"/.r_loop&&break;done;rm "+ TEMP_FILES_LOCATION + "/.r_info;rm "+ TEMP_FILES_LOCATION + "/.linenum", true);
 	}
 	
@@ -1076,7 +1076,7 @@ public class SshConnection {
 			
 			command=killCommand + infoCommand + "while true;do omxplayer "+addOptions+strLive + blank + " -o " + audioOuputDevice
 					+ subtitleString + getLastVolumeString() + videoFile +">/dev/null 2>&1 <"
-					+ TEMP_FILES_LOCATION + "/.r_input;test $? -gt 134&&break;test -e " + TEMP_FILES_LOCATION
+					+ TEMP_FILES_LOCATION + "/.r_input;test $? -ne 0&&break;test -e " + TEMP_FILES_LOCATION
 					+ "/.r_loop&&rm " + TEMP_FILES_LOCATION + "/.r_info&&break;done";
 		}
 		VideoControlExecutor.resetActiveAudioStream();
