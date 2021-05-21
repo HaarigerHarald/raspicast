@@ -45,3 +45,6 @@ _sandbox
 
 # pw encryption key
 encKey
+
+# libs
+libs/

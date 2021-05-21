@@ -32,7 +32,7 @@ import android.content.DialogInterface.OnShowListener;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;

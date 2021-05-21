@@ -1,0 +1,10 @@
+plugins {
+    id 'com.alexvasilkov.git-dependencies' version '2.0.4'
+}
+
+git {
+    fetch 'https://github.com/SoftwareAG/ganymed-ssh-2.git', {
+        name 'ganymed-ssh2'
+        tag 'ganymed-ssh2-263'
+    }
+}

@@ -4,18 +4,17 @@ buildscript {
         // the google() method. And you need to include this repo to download
         // Android plugin 3.0.0 or higher.
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath 'com.android.tools.build:gradle:4.2.1'
     }
 }
 
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    compileSdkVersion 29
 
     if (System.console() != null) {
         signingConfigs {
@@ -31,9 +30,9 @@ android {
     defaultConfig {
         applicationId "at.huber.raspicast"
         minSdkVersion 14
-        targetSdkVersion 28
-        versionCode 63
-        versionName "1.4.10"
+        targetSdkVersion 29
+        versionCode 64
+        versionName "1.4.11"
     }
 
     applicationVariants.all { variant ->
@@ -53,11 +52,12 @@ android {
             }
         }
     }
+
+    sourceSets.main.java.srcDirs += ['libs/ganymed-ssh2/src/main/java']
 }
 
 repositories {
     mavenCentral()
-    jcenter()
     maven { url "https://jitpack.io" }
     google()
 }
@@ -68,13 +68,12 @@ configurations.all {
 }
 
 dependencies {
-    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation('com.github.HaarigerHarald:android-youtubeExtractor:master-SNAPSHOT') {
         exclude module: 'appcompat-v7'
         changing = true
     }
-
-    implementation files('libs/ganymedSSH2.jar')
+    
     implementation 'org.nanohttpd:nanohttpd:2.3.1'
     implementation 'com.getbase:floatingactionbutton:1.10.1'
     implementation 'com.jpardogo.materialtabstrip:library:1.1.1'

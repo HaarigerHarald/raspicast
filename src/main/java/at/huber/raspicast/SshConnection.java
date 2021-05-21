@@ -24,7 +24,7 @@ import android.content.SharedPreferences.Editor;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v4.app.FragmentActivity;
+import androidx.fragment.app.FragmentActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -47,6 +47,7 @@ import at.huber.raspicast.dialogs.CertDialog;
 import at.huber.raspicast.utils.HttpFileStreamer;
 import at.huber.raspicast.utils.RaspiUtils;
 import at.huber.raspicast.youtube.RaspiYouTubeExtractor;
+
 import ch.ethz.ssh2.Connection;
 import ch.ethz.ssh2.ConnectionInfo;
 import ch.ethz.ssh2.KnownHosts;
@@ -160,7 +161,6 @@ public class SshConnection {
 						boolean isAuthenticated;
 						conn=new Connection(sshHostname, sshPort);
 						unreachable=false;
-						conn.enableCompression();
 						ConnectionInfo conInfo=conn.connect(null, 0, 2700);			
 						String fingerprint = KnownHosts.createHexFingerprint(conInfo.serverHostKeyAlgorithm, conInfo.serverHostKey);
 						String oldFingerprint= context.getSharedPreferences(Constants.PREF_FILE_NAME, Context.MODE_PRIVATE).
