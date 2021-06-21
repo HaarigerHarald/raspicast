@@ -31,8 +31,8 @@ android {
         applicationId "at.huber.raspicast"
         minSdkVersion 14
         targetSdkVersion 29
-        versionCode 64
-        versionName "1.4.11"
+        versionCode 65
+        versionName "1.4.12"
     }
 
     applicationVariants.all { variant ->
