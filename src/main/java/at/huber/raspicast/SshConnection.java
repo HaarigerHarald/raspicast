@@ -63,8 +63,8 @@ public class SshConnection {
 	private final static String CMD_SEARCH_RELATIVE_PRE="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Seek int64:";
 	private final static String CMD_SEARCH_POST="000000 >/dev/null 2>&1";
 
-	private static String CMD_LOUDER="echo -n +>>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null";
-	private static String CMD_QUIETER="echo -n ->>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null";
+	private static String CMD_LOUDER="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Action int32:18>/dev/null 2>&1;echo -n +>>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null";
+	private static String CMD_QUIETER="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Action int32:17>/dev/null 2>&1;echo -n ->>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null;";
 
 	private static String CMD_REPEAT="rm " + TEMP_FILES_LOCATION + "/.r_loop 2>/dev/null";
 	private static String CMD_DO_NOT_REPEAT="echo> " + TEMP_FILES_LOCATION + "/.r_loop 2>/dev/null";
@@ -76,15 +76,14 @@ public class SshConnection {
 	private final static String CMD_HIDE_SUBTITLES="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.HideSubtitles>/dev/null 2>&1";
 
 	private final static String CMD_PLAY_PAUSE="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause>/dev/null 2>&1";
-	private static String CMD_STOP=ABORT_COMMAND + "echo -n> " + TEMP_FILES_LOCATION
-			+ "/.r_input 2>/dev/null;pkill omxiv";
+	private static String CMD_STOP=ABORT_COMMAND + "echo -n> " + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null;pkill omxiv";
 	private final static String CMD_FULL_STATUS="a=\"dbus-send --print-reply=literal --reply-timeout=800 --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2  org.\";b=\"mpris.MediaPlayer2.Player.\";c=\"freedesktop.DBus.Properties.\";${a}${c}Duration&&${a}${b}ListAudio&&${a}${b}ListSubtitles&&${a}${c}Position&&${a}${c}Duration&&${a}${c}PlaybackStatus)2>/dev/null";
 	private final static String CMD_YT_STATUS="a=\"dbus-send --print-reply=literal --reply-timeout=800 --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2  org.\";c=\"freedesktop.DBus.Properties.\";${a}${c}Duration&&${a}${c}Position&&${a}${c}PlaybackStatus)2>/dev/null";
 	private final static String CMD_REDUCED_STATUS="a=\"dbus-send --print-reply=literal --reply-timeout=800 --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.\";${a}Position&&${a}PlaybackStatus)2>/dev/null";
 	
 	private final static String CMD_ONLY_AUDIO_STATUS="dbus-send --print-reply=literal --reply-timeout=300 --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.ListAudio 2>/dev/null";
 	
-	private static String[] THREAD_NAMES = { "SessionThread1", "SessionThread2", "SessionThread3", "SessionThread4" };
+	private static final String[] THREAD_NAMES = { "SessionThread1", "SessionThread2", "SessionThread3", "SessionThread4" };
 
 	private static Connection conn;
 
@@ -126,8 +125,8 @@ public class SshConnection {
 	public static void updateTmpFileLoc(){
 		ABORT_COMMAND="pkill omxplayer.bin;pkill -x omxplayer;rm " + TEMP_FILES_LOCATION + "/.r_info;rm " + TEMP_FILES_LOCATION + "/.linenum;";
 
-		CMD_LOUDER="echo -n +>>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null";
-		CMD_QUIETER="echo -n ->>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null";
+		CMD_LOUDER="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Action int32:18>/dev/null 2>&1;echo -n +>>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null";
+		CMD_QUIETER="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.omxplayer /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Action int32:17>/dev/null 2>&1;echo -n ->>" + TEMP_FILES_LOCATION + "/.r_input 2>/dev/null";
 
 		CMD_REPEAT="rm " + TEMP_FILES_LOCATION + "/.r_loop 2>/dev/null";
 		CMD_DO_NOT_REPEAT="echo> " + TEMP_FILES_LOCATION + "/.r_loop 2>/dev/null";
@@ -838,7 +837,7 @@ public class SshConnection {
 									queue.add(line);
 								}
 								
-								if(line !=null && line.equals("")){
+								if(line != null){
 									line = br.readLine();
 									try{
 										int numCast = Integer.parseInt(line);
@@ -950,8 +949,8 @@ public class SshConnection {
 			stb.append(";test ! -e "+TEMP_FILES_LOCATION+"/.r_info&&(echo $(($(wc -l<$f)-"+ (streams.length*4-1)+"))"+
 				" >$l;while true;do while [ $(cat $l) -le $(wc -l<$f) ];do sed -n \"$(cat $l),+1p\" $f>"
 				+TEMP_FILES_LOCATION+"/.r_info;omxplayer"+addOptions+subtitleString+" -o "+audioOuputDevice+getLastVolumeString()
-				+ "$(sed -n \"$(($(cat $l)+2))p\" $f) \"$(sed -n \"$(($(cat $l)+3))p\" $f)\">/dev/null 2>&1 <"+ TEMP_FILES_LOCATION 
-				+ "/.r_input;test $? -ne 0&&exit;echo $(($(cat $l)+4)) >$l;done;echo 1 >$l;test -e " + TEMP_FILES_LOCATION+ 
+				+ "$(sed -n \"$(($(cat $l)+2))p\" $f) \"$(sed -n \"$(($(cat $l)+3))p\" $f)\">/dev/null 2>&1 </dev/null;"
+				+ "test $? -ne 0&&exit;echo $(($(cat $l)+4)) >$l;done;echo 1 >$l;test -e " + TEMP_FILES_LOCATION+
 				"/.r_loop&&break;done;rm "+ TEMP_FILES_LOCATION + "/.r_info;rm "+ TEMP_FILES_LOCATION + "/.linenum)");
 		}
 		executeCommand(context, stb.toString(), true);
@@ -994,8 +993,8 @@ public class SshConnection {
 		executeCommand(con, killCommand+"f=\""+TEMP_FILES_LOCATION+"/.queue\";l=\""+TEMP_FILES_LOCATION+"/.linenum\";echo "+lineNum+
 				" >$l;while true;do while [ $(cat $l) -le $(wc -l<$f) ];do sed -n \"$(cat $l),+1p\" $f>"
 				+TEMP_FILES_LOCATION+"/.r_info;omxplayer"+addOptions+subtitleString+" -o "+audioOuputDevice+getLastVolumeString()
-				+ "$(sed -n \"$(($(cat $l)+2))p\" $f) \"$(sed -n \"$(($(cat $l)+3))p\" $f)\">/dev/null 2>&1 <"+ TEMP_FILES_LOCATION 
-				+ "/.r_input;test $? -ne 0&&exit;echo $(($(cat $l)+4)) >$l;done;echo 1 >$l;test -e " + TEMP_FILES_LOCATION+ 
+				+ "$(sed -n \"$(($(cat $l)+2))p\" $f) \"$(sed -n \"$(($(cat $l)+3))p\" $f)\">/dev/null 2>&1 </dev/null;"
+				+ "test $? -ne 0&&exit;echo $(($(cat $l)+4)) >$l;done;echo 1 >$l;test -e " + TEMP_FILES_LOCATION+
 				"/.r_loop&&break;done;rm "+ TEMP_FILES_LOCATION + "/.r_info;rm "+ TEMP_FILES_LOCATION + "/.linenum", true);
 	}
 	
@@ -1050,7 +1049,7 @@ public class SshConnection {
 		if (stream.startsWith("rtp://") || stream.startsWith("udp://")){
 			String strLive = (liveOption<2) ? "--live ": "";
 			command=killCommand + infoCommand + "omxplayer "+addOptions+strLive+"-b -o " + audioOuputDevice + getLastVolumeString()
-					+ stream.replace("@", "") + ">/dev/null 2>&1 <" + TEMP_FILES_LOCATION + "/.r_input&&rm " + TEMP_FILES_LOCATION + "/.r_info";
+					+ stream.replace("@", "") + ">/dev/null 2>&1 </dev/null&&rm " + TEMP_FILES_LOCATION + "/.r_info";
 		}else{
 			String videoFile;
 			String strLive="";
@@ -1075,8 +1074,8 @@ public class SshConnection {
 			}
 			
 			command=killCommand + infoCommand + "while true;do omxplayer "+addOptions+strLive + blank + " -o " + audioOuputDevice
-					+ subtitleString + getLastVolumeString() + videoFile +">/dev/null 2>&1 <"
-					+ TEMP_FILES_LOCATION + "/.r_input;test $? -ne 0&&break;test -e " + TEMP_FILES_LOCATION
+					+ subtitleString + getLastVolumeString() + videoFile +">/dev/null 2>&1 </dev/null;"
+					+ "test $? -ne 0&&break;test -e " + TEMP_FILES_LOCATION
 					+ "/.r_loop&&rm " + TEMP_FILES_LOCATION + "/.r_info&&break;done";
 		}
 		VideoControlExecutor.resetActiveAudioStream();
@@ -1156,7 +1155,7 @@ public class SshConnection {
 //			+ "/.r_input|wc -l)-$(grep -o - " + TEMP_FILES_LOCATION + "/.r_input|wc -l)));test $v -gt 7&&exit;test $v -lt -17&&exit;";
 			String command=(louder) ? CMD_LOUDER : CMD_QUIETER;
 			lastVolumeControlMillis=System.currentTimeMillis();
-			executeCommand(con, command, false);
+			executeCommand(con, getDbus() + command, false);
 		}
 	}
 	
