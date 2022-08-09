@@ -1,0 +1,21 @@
+<b>&#8226;</b> Cast YouTube videos
+<b>&#8226;</b> Cast media content from your android device
+<b>&#8226;</b> Play local media files on your Raspberry Pi
+<b>&#8226;</b> Play streams from playlists (m3u, pls) on your Raspberry Pi
+
+<u><b>Requirements:</b></u>
+You just need a<b> Raspberry Pi </b>with a running <b>SSH-Server</b>, the <b>omxplayer</b> and optional a little image viewer. I only tested it with Raspbian, but there is no reason why it shouldn't work on other distributions. 
+
+<u><b>Features:</b></u>
+<b>&#8226;</b> Controllable via a seekbar
+<b>&#8226;</b> Hardware volume buttons
+<b>&#8226;</b> Support for multiple audio and subtitle (srt-format) streams
+
+<u><b>Usage:</b></u>
+<b>&#8226;</b> To cast YouTube videos to your Raspberry Pi just open the YouTube app and a video and choose "Share" &rarr; Raspicast.
+<b>&#8226;</b> To play streams just copy a playlist (m3u or pls format) to your android device and open the list via the app, or play the streams manually from the actionbar.
+
+<b>image viewer:</b> http://omxiv.bplaced.net
+<b>App source code:</b> https://github.com/HaarigerHarald/raspicast
+
+Raspberry Pi is a trademark of the Raspberry Pi Foundation
