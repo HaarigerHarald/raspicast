@@ -1,3 +1,5 @@
+<b>LEGACY: The OpenMax API is deprecated, you need a 32 bit RPI OS and omxplayer installed to run it.</b>
+
 <b>&#8226;</b> Cast YouTube videos
 <b>&#8226;</b> Cast media content from your android device
 <b>&#8226;</b> Play local media files on your Raspberry Pi
